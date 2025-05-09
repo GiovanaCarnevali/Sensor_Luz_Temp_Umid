@@ -7,11 +7,11 @@
 // === PINOS ===
 #define DHTPIN 2
 #define DHTTYPE DHT22
-#define LDR_PIN A5
-#define LED_VERDE 9
-#define LED_AMARELO 8
-#define LED_VERMELHO 7
-#define BUZZER 13
+#define LDR_PIN A0
+#define LED_VERDE 11
+#define LED_AMARELO 12
+#define LED_VERMELHO 13
+#define BUZZER 8
 
 // === OBJETOS ===
 DHT_Unified dht(DHTPIN, DHTTYPE);
