@@ -33,6 +33,13 @@ Desenvolver um sistema de monitoramento de luminosidade, temperatura e umidade u
 - 1 LCD
 - jumpers
 
+## 📚 Bibliotecas
+- DHT22
+- LiquidCrystal I2C
+- Adafruit Unified Sensor
+- DHT sensor library
+
+
 ## 📝 Passo a passo interativo
 
 Siga os passos abaixo para iniciar o projeto em seu ambiente local:
