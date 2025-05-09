@@ -11,7 +11,6 @@
 - Giovana Bernardino Carnevali 566196
 - João Vitor Parizotto Rocha 562719
 - Alexandre Freitas Silva 566278
-- Henry Cortesi 566085
 - Felipe Rodrigues Gomes Ribeiro 562482
 
 
