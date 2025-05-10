@@ -46,7 +46,7 @@ void loop() {
   dht.humidity().getEvent(&umidEvent);
 
   int valorLDR = analogRead(LDR_PIN);
-  float luz = map(valorLDR, 0, 1023, 100, 0); // Inverso para % de luz
+  float luz = map(valorLDR, 0, 1023, 0, 100); // Agora: 0% = escuro, 100% = muito claro
 
   float temp = tempEvent.temperature;
   float umid = umidEvent.relative_humidity;
@@ -85,18 +85,6 @@ void loop() {
     Serial.println(luzMedia);
     Serial.println("-------------------------");
 
-    Serial.print("Temp: ");
-    Serial.print(tempMedia);
-    Serial.println(" C");
-
-    Serial.print("Umid: ");
-    Serial.print(umidMedia);
-    Serial.println(" %");
-
-    Serial.print("Luz: ");
-    Serial.println(luzMedia);
-    Serial.println("-------------------------");
-
     // Reset para próxima média
     leituraCount = 0;
     somaTemp = somaUmid = somaLuz = 0;
@@ -126,16 +114,17 @@ void loop() {
     lcd.setCursor(0, 1);
     lcd.print("Luz: ");
     lcd.print(luzMedia, 1);
+    lcd.print("%");
     delay(2000);
 
     // === EXIBE TEMPERATURA ===
     lcd.clear();
     lcd.setCursor(0, 0);
-    if (tempMedia > 30) { // Alterado para 30°C como limite
+    if (tempMedia > 30) {
       digitalWrite(LED_AMARELO, HIGH);
       tone(BUZZER, 1000);
       lcd.print("Temp. Alta");
-    } else if (tempMedia < 10) { // Mantido o limite inferior de 10°C
+    } else if (tempMedia < 10) {
       digitalWrite(LED_AMARELO, HIGH);
       tone(BUZZER, 1000);
       lcd.print("Temp. Baixa");
@@ -151,7 +140,7 @@ void loop() {
     // === EXIBE UMIDADE ===
     lcd.clear();
     lcd.setCursor(0, 0);
-    if (umidMedia < 30) { // Alterado para 30% como limite de umidade baixa
+    if (umidMedia < 30) {
       digitalWrite(LED_VERMELHO, HIGH);
       tone(BUZZER, 1000);
       lcd.print("Umidade Baixa");
