@@ -120,7 +120,7 @@ void loop() {
     // === EXIBE TEMPERATURA ===
     lcd.clear();
     lcd.setCursor(0, 0);
-    if (tempMedia > 30) {
+    if (tempMedia > 15) {
       digitalWrite(LED_AMARELO, HIGH);
       tone(BUZZER, 1000);
       lcd.print("Temp. Alta");
@@ -140,7 +140,7 @@ void loop() {
     // === EXIBE UMIDADE ===
     lcd.clear();
     lcd.setCursor(0, 0);
-    if (umidMedia < 30) {
+    if (umidMedia < 50) {
       digitalWrite(LED_VERMELHO, HIGH);
       tone(BUZZER, 1000);
       lcd.print("Umidade Baixa");
