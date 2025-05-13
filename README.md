@@ -4,7 +4,7 @@
   <strong>🚨 🔧 💡</strong>
 </div>
 <div align="center">
-  Um projeto incrível com Arduino e LDR (Light Dependent Resistor)!
+  Um projeto incrível com Arduino, LDR e DHT22 (Light Dependent Resistor)!
 </div>
 
 # Equipe
